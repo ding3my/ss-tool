@@ -13,7 +13,7 @@ eval $cmd
 
 # append the printf result to your shell profile(e.g. ~/bash_profile). 
 git_name="$(basename $git_url .git)"
-printf "export PATH=\"\$PATH:$(pwd)/$git_name\"\n"
+printf "export PATH=\"\$PATH:$(pwd)/$git_name/\"\n"
 #+END_SRC
 * Use
 ** sst u
