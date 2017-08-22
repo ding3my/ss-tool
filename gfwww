@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# https://www.google.com/search?q=gnome+cli+pac&ie=utf-8&oe=utf-8
+
+cmd="$cmd gsettings set org.gnome.system.proxy mode 'none';"
+printf "$cmd"
+eval "$cmd"

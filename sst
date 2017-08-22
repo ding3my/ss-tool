@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+this_file="$(readlink --canonicalize-missing "${BASH_SOURCE[0]}")"
+this_file_name="$(basename "${this_file}")"
+this_dir="$(dirname "${this_file}")"
+this_dir_name="$(basename "$this_dir")"
+
+op="$1"
+if [ "$op" == "u" ]; then
+	config_dir="$HOME/.$this_dir_name"
+	mkdir "$config_dir" --parents
+	genpac --proxy="SOCKS5 127.0.0.1:1080" 1> "$config_dir/gfw.js"
+	cat<<EOF 1> "$config_dir/gfww.js"
+var exceptions=
+[
+    "0.0.0.0"
+    ,"localhost"
+    ,"127.0.0.1"
+]; 
+function FindProxyForURL(url, host) {
+    for (i = 0; i < exceptions.length; i++) {
+        if (shExpMatch(host, exceptions[i])){
+            return "DIRECT";}}
+        return "SOCKS5 127.0.0.1:1080";}
+EOF
+fi

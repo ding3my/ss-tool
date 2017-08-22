@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+this_file="$(readlink --canonicalize-missing "${BASH_SOURCE[0]}")"
+this_file_name="$(basename "${this_file}")"
+this_dir="$(dirname "${this_file}")"
+this_dir_name="$(basename "$this_dir")"
+
+pac_url="file://$HOME/.$this_dir_name/gfww.js"
+cmd="$cmd gsettings set org.gnome.system.proxy mode 'auto';"
+cmd="$cmd gsettings set org.gnome.system.proxy autoconfig-url '$pac_url'"
+printf "$cmd"
+eval "$cmd"

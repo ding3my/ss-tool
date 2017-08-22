@@ -1,0 +1,36 @@
+* Intro
+To switch the PAC file quickly.
+* Opt
+** Dependence
+#+BEGIN_SRC  
+https://github.com/JinnLynn/genpac
+#+END_SRC
+** Installation
+#+BEGIN_SRC  
+git_url=https://github.com/ding3my/ss-tool.git
+cmd="$cmd git clone $git_url;"
+eval $cmd
+
+# append the printf result to your shell profile file(e.g. ~/bash_profile). 
+git_name="$(basename $git_url .git)"
+printf "export PATH=\"\$PATH:\$HOME/.$git_name\"\n"
+#+END_SRC
+* Use
+** gfw
+To set the gfwlist PAC file.
+** gfww
+To set all websites passed PAC file.
+** gfwww
+To set no PAC file.
+** sst u
+To update the gfwlist PAC file.
+* Dev
+
+** DONE How to set PAC file in gnome with linux bash？
+   CLOSED: [2017-08-21 Mon 22:20]
+？
+
+#+BEGIN_SRC  
+https://www.google.com/search?q=gnome+cli+pac&ie=utf-8&oe=utf-8
+http://ask.xmodulo.com/change-system-proxy-settings-command-line-ubuntu-desktop.html
+#+END_SRC
