@@ -8,7 +8,7 @@ https://github.com/JinnLynn/genpac
 ** Installation
 #+BEGIN_SRC  
 git_url=https://github.com/ding3my/ss-tool.git
-cmd="$cmd git clone $git_url;"
+cmd="git clone $git_url;"
 eval $cmd
 
 # append the printf result to your shell profile file(e.g. ~/bash_profile). 
