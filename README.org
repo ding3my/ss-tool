@@ -9,7 +9,8 @@ https://github.com/JinnLynn/genpac
 #+BEGIN_SRC  
 git_url=https://github.com/ding3my/ss-tool.git
 cmd="git clone $git_url;"
-eval $cmd
+# eval $cmd
+sudo -- bash -c "$cmd"
 
 # append the printf result to your shell profile(e.g. ~/bash_profile). 
 git_name="$(basename $git_url .git)"
